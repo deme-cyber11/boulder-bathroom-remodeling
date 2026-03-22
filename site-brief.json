@@ -12,13 +12,14 @@
     "state": "Colorado",
     "state_abbr": "CO",
     "county": "Boulder County",
-    "phone": "(831) 282-3279",
+    "phone": "(720) 734-7645",
     "phone_formatted": "(831) 282-3279",
     "phone_digits": "18312823279",
     "email": "contact@boulderbathroomremodeling.com",
     "years_in_business": "8",
     "tagline": "Boulder's Trusted Bathroom Remodeling \u2014 Built for Colorado Living",
-    "web3forms_key": "0219881f-13e5-4175-b720-517b8d10c028"
+    "web3forms_key": "0219881f-13e5-4175-b720-517b8d10c028",
+    "twilio_number": "+17207347645"
   },
   "seo": {
     "primary_keyword": "bathroom remodeling boulder co",
