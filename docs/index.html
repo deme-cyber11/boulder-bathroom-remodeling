@@ -46,41 +46,72 @@
 
     <!-- LocalBusiness JSON-LD -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Boulder Bathroom Remodeling",
+  "telephone": "(720) 734-7645",
+  "email": "contact@boulderbathroomremodeling.com",
+  "url": "https://boulderbathroomremodeling.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Boulder",
+    "addressRegion": "CO",
+    "postalCode": "80301",
+    "addressCountry": "US"
+  },
+  "areaServed": [
     {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Boulder Bathroom Remodeling",
-        "telephone": "(720) 734-7645",
-        "email": "contact@boulderbathroomremodeling.com",
-        "url": "https://boulderbathroomremodeling.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Boulder",
-            "addressRegion": "CO",
-            "postalCode": "80301",
-            "addressCountry": "US"
-        },
-        "areaServed": [
-            {"@type": "City", "name": "Boulder"},
-            {"@type": "City", "name": "Longmont"},
-            {"@type": "City", "name": "Broomfield"},
-            {"@type": "City", "name": "Louisville"},
-            {"@type": "City", "name": "Lafayette"},
-            {"@type": "City", "name": "Superior"},
-            {"@type": "City", "name": "Erie"},
-            {"@type": "City", "name": "Gunbarrel"},
-            {"@type": "City", "name": "Niwot"},
-            {"@type": "City", "name": "Lyons"}
-        ],
-        "priceRange": "$$",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "reviewCount": "3"
-        }
+      "@type": "City",
+      "name": "Boulder"
+    },
+    {
+      "@type": "City",
+      "name": "Longmont"
+    },
+    {
+      "@type": "City",
+      "name": "Broomfield"
+    },
+    {
+      "@type": "City",
+      "name": "Louisville"
+    },
+    {
+      "@type": "City",
+      "name": "Lafayette"
+    },
+    {
+      "@type": "City",
+      "name": "Superior"
+    },
+    {
+      "@type": "City",
+      "name": "Erie"
+    },
+    {
+      "@type": "City",
+      "name": "Gunbarrel"
+    },
+    {
+      "@type": "City",
+      "name": "Niwot"
+    },
+    {
+      "@type": "City",
+      "name": "Lyons"
     }
-    </script>
+  ],
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "reviewCount": "3"
+  },
+  "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-14:00"
+}
+</script>
 
     <!-- FAQPage JSON-LD -->
     <script type="application/ld+json">
@@ -150,10 +181,10 @@
             <nav class="nav" id="nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="/" class="nav__link nav__link--active">Home</a></li>
-                    <li class="nav__item"><a href="/services.html" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="/services/" class="nav__link">Services</a></li>
                     <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="/pricing.html" class="nav__link">Pricing</a></li>
-                    <li class="nav__item"><a href="/blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="/blog/" class="nav__link">Blog</a></li>
                     <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
                 </ul>
             </nav>
@@ -502,10 +533,10 @@
                 <h3 class="footer__heading">Quick Links</h3>
                 <ul class="footer__links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/services/">Services</a></li>
                     <li><a href="/about.html">About</a></li>
                     <li><a href="/pricing.html">Pricing</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -543,7 +574,7 @@
                 <p>&copy; 2026 Boulder Bathroom Remodeling. All rights reserved.</p>
                 <div class="footer__legal">
                     <a href="/privacy-policy.html">Privacy Policy</a>
-                    <a href="/terms.html">Terms of Service</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
         </div>
