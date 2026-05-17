@@ -21,6 +21,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.v1.css">
+    <link rel="stylesheet" href="/css/style.v2.5.css">
+    <link rel="stylesheet" href="/css/site-theme.css">
 
     <!-- Hero Image Preloads -->
     <link rel="preload" as="image" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect fill='%23c4956a' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='36' fill='%23fff'%3EBefore%3C/text%3E%3C/svg%3E">
@@ -55,6 +57,7 @@
   "url": "https://boulderbathroomremodeling.com",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "1750 30th St, Ste 100",
     "addressLocality": "Boulder",
     "addressRegion": "CO",
     "postalCode": "80301",
@@ -225,11 +228,12 @@
   <meta name="twitter:title" content="Bathroom Remodeling in Boulder, CO | Boulder Bathroom Remodeling" />
   <meta name="twitter:description" content="Professional bathroom remodeling in Boulder, CO. Licensed &amp; insured. Free estimates. Call (720) 734-7645." />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#64748b">
 </head>
 <body>
 
     <!-- ========== HEADER ========== -->
-    <header class="header" id="header">
+    <header id="header">
         <div class="container header__inner">
             <a href="/" class="logo">
                 <span class="logo__primary">Boulder</span>
@@ -242,7 +246,7 @@
                     <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="/pricing.html" class="nav__link">Pricing</a></li>
                     <li class="nav__item"><a href="/blog/" class="nav__link">Blog</a></li>
-                    <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="/contact.html#contact" class="nav__link">Contact</a></li>
                 </ul>
             </nav>
             <a href="tel:17207347645" class="header__phone">
@@ -268,7 +272,7 @@
                     <a href="tel:17207347645" class="btn btn--primary">
                         <i class="ph ph-phone"></i> Call Now
                     </a>
-                    <a href="/contact.html" class="btn btn--secondary">
+                    <a href="/contact.html#contact" class="btn btn--secondary">
                         <i class="ph ph-envelope"></i> Free Estimate
                     </a>
                 </div>
@@ -383,7 +387,7 @@
             <div class="section-header">
                 <h2 class="section-title">Our Bathroom Remodeling Services</h2>
                 <p class="section-subtitle">Professional bathroom remodeling services for homeowners across Boulder County, Colorado.</p>
-<img src="/images/niche-1.jpg" alt="Bathroom remodeling — Docs" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;">
+<img src="/images/niche-1.jpg" alt="Bathroom remodeling — Docs" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
 
             </div>
             <div class="services__grid">
@@ -635,7 +639,7 @@
                 <a href="tel:17207347645" class="btn btn--primary btn--lg">
                     <i class="ph ph-phone"></i> Call (720) 734-7645
                 </a>
-                <a href="/contact.html" class="btn btn--secondary btn--lg">
+                <a href="/contact.html#contact" class="btn btn--secondary btn--lg">
                     <i class="ph ph-envelope"></i> Schedule Free Consultation
                 </a>
             </div>
@@ -704,6 +708,21 @@
   </div>
 </section>
 
+<!-- ========== GALLERY ========== -->
+<section class="section section-light ba-gallery" id="gallery">
+  <div class="container">
+    <div class="section-title" style="text-align:center;margin-bottom:32px">
+      <h2>Our Work in Boulder</h2>
+      <p>Real bathroom transformations across Boulder County</p>
+    </div>
+    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">
+      <div class="gallery-item"><img src="/images/niche-1.jpg" alt="Shower remodel completed in Boulder CO" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:8px" width="600" height="400"></div>
+      <div class="gallery-item"><img src="/images/niche-2.jpg" alt="Full bathroom remodel in Boulder Colorado" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:8px" width="600" height="400"></div>
+      <div class="gallery-item"><img src="/images/niche-3.jpg" alt="Custom tile installation in Boulder CO home" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:8px" width="600" height="400"></div>
+    </div>
+  </div>
+</section>
+
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
         <div class="container footer__inner">
@@ -719,7 +738,7 @@
                     <li><a href="/about.html">About</a></li>
                     <li><a href="/pricing.html">Pricing</a></li>
                     <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/contact.html#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer__col">
@@ -768,7 +787,7 @@
             <i class="ph ph-phone"></i>
             <span>Call Now</span>
         </a>
-        <a href="/contact.html" class="mobile-cta__btn mobile-cta__btn--quote">
+        <a href="/contact.html#contact" class="mobile-cta__btn mobile-cta__btn--quote">
             <i class="ph ph-clipboard"></i>
             <span>Free Quote</span>
         </a>
@@ -777,5 +796,16 @@
     <!-- Main JS -->
     <script src="js/main.js"></script>
 
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>

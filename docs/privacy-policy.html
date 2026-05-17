@@ -21,6 +21,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.v1.css">
+    <link rel="stylesheet" href="/css/style.v2.5.css">
+    <link rel="stylesheet" href="/css/site-theme.css">
 
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6ZBY16329"></script>
@@ -82,11 +84,12 @@
   <meta name="twitter:title" content="Privacy Policy | Boulder Bathroom Remodeling" />
   <meta name="twitter:description" content="Privacy Policy for Boulder Bathroom Remodeling. Learn how we collect, use, and protect your personal information." />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
 
     <!-- ========== HEADER ========== -->
-    <header class="header" id="header">
+    <header id="header">
         <div class="container header__inner">
             <a href="/" class="logo">
                 <span class="logo__primary">Boulder</span>
@@ -294,6 +297,17 @@
   window.addEventListener('scroll',function(){
     el.classList.toggle('visible',window.scrollY>80);
   },{passive:true});
+})();
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>

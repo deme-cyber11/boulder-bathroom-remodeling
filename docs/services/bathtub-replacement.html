@@ -20,7 +20,9 @@
     <script defer src="https://unpkg.com/@phosphor-icons/web" defer></script>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="../css/styles.v1.css">
+    <link rel="stylesheet" href="/css/styles.v1.css">
+    <link rel="stylesheet" href="/css/style.v2.5.css">
+    <link rel="stylesheet" href="/css/site-theme.css">
 
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6ZBY16329"></script>
@@ -73,11 +75,12 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:title" content="Bathtub Replacement in Boulder, CO | Boulder Bathroom Remodeling" />
   <meta name="twitter:description" content="Professional bathtub replacement in Boulder, CO. Soaker, freestanding, and walk-in tubs. Call (720) 734-7645." />
+    <meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
 
     <!-- ========== HEADER ========== -->
-    <header class="header" id="header">
+    <header id="header">
         <div class="container header__inner">
             <a href="../" class="logo">
                 <span class="logo__primary">Boulder</span>
@@ -90,7 +93,7 @@
                     <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="/pricing.html" class="nav__link">Pricing</a></li>
                     <li class="nav__item"><a href="../blog/" class="nav__link">Blog</a></li>
-                    <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="/contact.html#contact" class="nav__link">Contact</a></li>
                 </ul>
             </nav>
             <a href="tel:17207347645" class="header__phone">
@@ -121,7 +124,7 @@
         <div class="container">
             <h1>Bathtub Replacement in Boulder</h1>
             <p>Professional bathtub removal and installation in Boulder, CO. Soaker tubs, freestanding tubs, and walk-in models from a licensed and insured team.</p>
-<img src="/images/svc-bathtub-replacement.webp" alt="Bathtub Replacement in Boulder CO" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;">
+<img src="/images/svc-bathtub-replacement.webp" alt="Bathtub Replacement in Boulder CO" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
 
         </div>
     </section>
@@ -197,7 +200,7 @@
                         <a href="tel:17207347645" class="btn btn--primary btn--block">
                             <i class="ph ph-phone"></i> (720) 734-7645
                         </a>
-                        <a href="/contact.html" class="btn btn--secondary btn--block">
+                        <a href="/contact.html#contact" class="btn btn--secondary btn--block">
                             <i class="ph ph-envelope"></i> Contact Us
                         </a>
                     </div>
@@ -226,7 +229,7 @@
                 <a href="tel:17207347645" class="btn btn--primary btn--lg">
                     <i class="ph ph-phone"></i> Call (720) 734-7645
                 </a>
-                <a href="/contact.html" class="btn btn--secondary btn--lg">
+                <a href="/contact.html#contact" class="btn btn--secondary btn--lg">
                     <i class="ph ph-envelope"></i> Free Estimate
                 </a>
             </div>
@@ -248,7 +251,7 @@
                     <li><a href="/about.html">About</a></li>
                     <li><a href="/pricing.html">Pricing</a></li>
                     <li><a href="../blog/">Blog</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/contact.html#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer__col">
@@ -297,14 +300,25 @@
             <i class="ph ph-phone"></i>
             <span>Call Now</span>
         </a>
-        <a href="/contact.html" class="mobile-cta__btn mobile-cta__btn--quote">
+        <a href="/contact.html#contact" class="mobile-cta__btn mobile-cta__btn--quote">
             <i class="ph ph-clipboard"></i>
             <span>Free Quote</span>
         </a>
     </div>
 
     <!-- Main JS -->
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>

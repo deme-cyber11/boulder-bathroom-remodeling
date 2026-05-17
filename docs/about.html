@@ -21,6 +21,8 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.v1.css">
+    <link rel="stylesheet" href="/css/style.v2.5.css">
+    <link rel="stylesheet" href="/css/site-theme.css">
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6ZBY16329"></script>
@@ -82,6 +84,7 @@
   <meta name="twitter:title" content="About Us | Boulder Bathroom Remodeling" />
   <meta name="twitter:description" content="Learn about Boulder Bathroom Remodeling — 8+ years serving Boulder County. Licensed and insured bathroom contractors." />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
 
@@ -120,7 +123,7 @@
     <div class="container">
       <h1>About Boulder Bathroom Remodeling</h1>
       <p>Boulder County's trusted bathroom remodeling team — licensed, insured, and committed to quality craftsmanship for over 8 years.</p>
-<img src="/images/niche-1.jpg" alt="Bathroom remodeling — About" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;">
+<img src="/images/niche-1.jpg" alt="Bathroom remodeling — About" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
 
     </div>
   </section>
@@ -344,6 +347,17 @@
   window.addEventListener('scroll',function(){
     el.classList.toggle('visible',window.scrollY>80);
   },{passive:true});
+})();
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>
