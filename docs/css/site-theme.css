@@ -205,3 +205,4 @@ footer.footer .footer__contact span, footer.footer .footer__contact a { overflow
 .cta-section { background: linear-gradient(135deg, #2e4a2e, #3d633d) !important; }
 .cta-section::before, .cta-section::after { display: none !important; }
 @media (max-width: 600px) { .service-areas__grid { grid-template-columns: repeat(2, 1fr); } }
+.ba-slider img { pointer-events: none; -webkit-user-drag: none; user-select: none; }
