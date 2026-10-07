@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.ba-slider').forEach(function (slider) {
     var handle = slider.querySelector('.ba-handle');
     var afterImg = slider.querySelector('.ba-after');
+    if (!handle || !afterImg) return; /* the homepage uses the ba-slider__ markup handled below */
     var isDragging = false;
 
     function updateSlider(x) {
@@ -67,6 +68,51 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: false });
     document.addEventListener('touchend', function () {
       isDragging = false;
+    });
+  });
+
+  /* ---------- Header menu, slider and FAQ for the header__ / ba-slider__ / faq-item__ markup (2026-10-07) ---------- */
+  var navBtn = document.getElementById('hamburger');
+  var navPanel = document.getElementById('nav');
+  if (navBtn && navPanel) {
+    navBtn.addEventListener('click', function () {
+      var open = navPanel.classList.toggle('open');
+      navBtn.classList.toggle('active', open);
+      navBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navPanel.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navPanel.classList.remove('open'); navBtn.classList.remove('active');
+        navBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+      });
+    });
+  }
+  document.querySelectorAll('.ba-slider').forEach(function (slider) {
+    var before = slider.querySelector('.ba-slider__before');
+    var bar = slider.querySelector('.ba-slider__handle');
+    if (!before || !bar) return;
+    var dragging = false;
+    function setPos(x) {
+      var r = slider.getBoundingClientRect();
+      var pct = Math.max(0, Math.min(100, (x - r.left) / r.width * 100));
+      bar.style.left = pct + '%';
+      before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+    }
+    slider.addEventListener('mousedown', function (e) { dragging = true; setPos(e.clientX); });
+    window.addEventListener('mousemove', function (e) { if (dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup', function () { dragging = false; });
+    slider.addEventListener('touchstart', function (e) { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', function (e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', function () { dragging = false; });
+  });
+  document.querySelectorAll('.faq-item__question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function (el) { el.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
     });
   });
 
