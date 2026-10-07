@@ -206,3 +206,5 @@ footer.footer .footer__contact span, footer.footer .footer__contact a { overflow
 .cta-section::before, .cta-section::after { display: none !important; }
 @media (max-width: 600px) { .service-areas__grid { grid-template-columns: repeat(2, 1fr); } }
 .ba-slider img { pointer-events: none; -webkit-user-drag: none; user-select: none; }
+/* Hero town name: the v2.5 gradient faded amber into sky blue; keep it solid brand amber */
+.hero__title span { background: none !important; -webkit-text-fill-color: #e8a838 !important; color: #e8a838 !important; }
